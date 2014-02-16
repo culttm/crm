@@ -1,0 +1,32 @@
+<div id="userListViewContainer">
+
+	<div class="userViewingControls">
+		<input id="userSearchTextfield" type="text" name="search" value="" />
+		<br/>		
+		<input id="allUsersCB" class="userListCB" name="userListCB" type="radio" value="allUsersCB" checked="checked"/>
+		<label for="allUsersCB">All Users</label>
+		<br/> 
+		<input id="lastSearchCB" class="userListCB" name="userListCB" type="radio" value="lastSearchCB"/>
+		<label for="lastSearchCB">Last Search Result</label>
+		<br/>
+		<div id="userListLength">Total users: <%=userListLength%></div>		
+	</div>
+
+	<table id="userTable">
+		
+		<th>ID</th>
+		<th>Email Address</th>
+		<th>Name</th>
+				
+		<% for(var i = 0; i < users.length; i++){ %> <% var user = users[i]; %>
+				
+		<tr>				
+			<td><%= user.get('id') %></td>
+			<td><%= user.get('email') %></td>
+			<td><%= user.get('name') %></td>			
+		</tr>
+		
+		<% } %>
+	</table>
+	
+</div>

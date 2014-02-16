@@ -1,0 +1,36 @@
+<%
+	var userName = userWithMostTrainings.user.get('name');
+	var userEmail = userWithMostTrainings.user.get('email');
+	var userId = userWithMostTrainings.user.get('id');
+%>
+
+	<div class="statisticsView">
+	<div class="infoLine"><h3>Total amount of payments:</h3> <span>€<%=paymentTotal/100%></span></div>
+	<table id="statisticsTable">
+		<th>Contracts:</th><th>Number:</th></tr> 
+		<% for ( var j in contracts) { %>
+			<tr>
+				<td><%= j %></td>
+				<td><%= contracts[j] %></td>
+			</tr>
+		<% } %>
+	</table>
+	<div class="infoLine"><h3>Total trainings generated:</h3> <span><%=trainings%></span></div>
+	<div id="userWithMostTrainings" class="infoLine"><h3>User with most trainings:</h3> <a id="linkUserCard" href="#"><%= userName %> <%=userEmail%> </a> with <%=userWithMostTrainings.trainings%> trainings. <span></div>
+	<div class="infoLine"><h3>Registrations:</h3> <span><%=registrations%></span></div>
+	<table class="giftCardTable">
+		<th>Gift Card Name:</th><th>Number Consumed:</th>
+		<% for(var i in giftCards) { %>
+		<tr>
+			<td><%= i %></td>
+			<td><%= giftCards[i] %></td>
+		</tr>
+		<% } %>
+	</table>
+			
+	<div id="timeSpecifier">		
+		Specify time: <input id="specifyTimeTextfield" type="text"/> days before today. <br/>
+		<div id="timSpecifiedNanErrorMessage" style="display:none">Please enter a number!</div>		
+	</div>
+
+</div>

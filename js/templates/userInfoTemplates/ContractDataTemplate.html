@@ -1,0 +1,59 @@
+<%
+	var contractData = user.get('contractData');
+	if($.isEmptyObject(contractData)) {
+		console.log(contractData);
+%>
+	<span>The user has no contract data</span>
+<%	
+	} else { %>
+
+	<div id="transactionsWrapper">
+		<h3>Transactions</h3>
+		<table id="paymentsTable">
+			<th>Amount</th>
+			<th>Date</th>
+			<th>Reason</th>
+			<th>Type</th>
+			<% for (var j in contractData.transactions) { %>
+			<tr>
+				<td><%= contractData.transactions[j].amount *= 0.01 %> &euro;</td>
+				<td><%= contractData.transactions[j].date %></td> 
+				<td><%= contractData.transactions[j].reason %></td> 
+				<td><%= contractData.transactions[j].type %></td> 
+			</tr>
+			<% } %>
+		</table>
+		<div class="balance">Balance total: <%= contractData.balanceTotal %>&euro; </div>
+		<h3>Merged Payments</h3>
+		<table id="mergedPaymentsTable">
+			<th>Amount</th>
+			<th>Date</th>
+			<th>Reason</th>
+			<th>PSP</th>
+			<% for (var j in contractData.mergedPayments) { %>
+			<tr>
+				<td><%= contractData.mergedPayments[j].amount *= 0.01 %> &euro;</td>
+				<td><%= contractData.mergedPayments[j].date %></td> 
+				<td><%= contractData.mergedPayments[j].reason %></td> 
+				<td><%= contractData.mergedPayments[j].psp %></td>				
+			</tr>
+			<% } %>
+		</table>
+		<% if ( ! $.isEmptyObject(contractData.currentContract) ) { %>
+			<h3>Current Contract</h3>
+			<div id="currentContractInfo">
+				<div class="infoLine">Canceled: <%= contractData.currentContract.cancelled %></div>
+				<div class="infoLine">End of the right of withdrawal: <%= contractData.currentContract.endRightOfWithdrawal %> </div>
+				<div class="infoLine">Payment period ends: <%= contractData.currentContract.paymentPeriodEnd %> </div>
+				<div class="infoLine">Plan cost: <%= contractData.currentContract.planCost %> </div>
+				<div class="infoLine">Plan id: <%= contractData.currentContract.planId %> </div>
+				<div class="infoLine">Plan name: <%= contractData.currentContract.planName %> </div>
+				<div class="infoLine">Start date: <%= contractData.currentContract.startDate %> </div>
+				<div class="infoLine">Withdrawn: <%= contractData.currentContract.withdrawn %> </div>
+			</div>
+		<% } %>
+		<h3>Buff gift card:</h3>
+		<h3>Consumed gift card:</h3>
+	</div>
+
+<% } %>

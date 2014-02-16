@@ -1,0 +1,33 @@
+<%
+	var emailData = user.get('emailData');
+	if($.isEmptyObject(emailData)) {
+%>
+	<span>The user has no email data</span>
+<%	
+	} else {
+%>
+
+	<div id="emailDataWrapper">
+		<div><h3>Newsletter:</h3> 
+			<% if(emailData.newsletter) { %> Subscribed 
+			<% } else { %> Not Subscribed
+			<% } %>
+		</div>
+		<div><h3>Training Supervision:</h3>
+			<% if(emailData.supervision) { %> Subscribed
+			<% } else { %> Not Subscribed
+			<% } %>
+		</div>
+	</div>
+	<h3>Received Emails Archive</h3>
+	<table id="emailTable">
+		<% 
+			for( var j in emailData.receivedEmails)	{ %> 
+				<tr>
+					<td><%= j %></td>
+					<td><%= emailData.receivedEmails[j] %></td>
+				</tr>
+		<% } %>
+	</table>
+	
+<% } %>

@@ -1,0 +1,291 @@
+@CHARSET "UTF-8";
+
+
+/* top level styling */
+
+body {
+	margin:0;
+	padding:0;
+	font-family:arial helvetica sans-serif;			
+}
+
+#application {
+	text-align:center;	
+}
+html{
+	overflow-y: scroll
+}
+
+h3{font-size: 15px; text-align: left}
+
+/* Tables Style */
+table tr td{border: none;border-bottom: 1px solid #ccc;border-left: 1px solid #ccc;}
+table, table td {border-spacing: 0}
+table{border: 1px solid #ccc;border-bottom: none;border-left: none;}
+
+/* UI Dialog */
+.ui-dialog table{width: 100%;}
+
+/* User list/table styling */
+
+#userListViewContainer {
+	margin:20px auto;	
+	width:980px;		
+}
+	
+#userTable {
+	padding:0;
+	margin:0 auto;
+	border-spacing:0;
+	border-collapse:collapse;
+	border:1px solid #ccc;	
+	float:left;
+	clear:none;
+	width:600px;			
+}
+
+tr:hover {
+	color: #FFF;
+	background:#F39814;
+	cursor:pointer;
+}
+
+td {
+	font-size:14px;
+	border:1px solid #ccc;
+	padding:10px;		
+}
+
+th {
+	font-size:16px;
+	border:1px solid #ccc;
+	padding:10px;	
+	color:#FFF;
+	background:#0098E4;
+	width:200px;	
+}
+
+.userViewingControls {
+	float:left;
+	clear:none;
+	margin-right:30px;
+	text-align:left;
+}
+
+#userSearchTextfield {
+	width:200px;
+	height:30px;
+	padding-left:5px;
+	border:1px solid #CCC;
+	border-radius:none;
+}
+
+#allUsersCheckBox {
+	margin-top:10px;	
+}
+
+#userListLength {
+	margin-top:20px;
+	font-style:italic;
+}
+
+
+/* Single user (detailed) view styling */
+
+#username {
+	width:1180px;
+	text-align:left;
+	padding-left:10px;
+	margin:40px auto 5px;
+}
+#tabs {width:1180px;margin:0px auto;}
+#tabs ul {background:#FFF;}
+#tabs .ui-state-default a {background:#FFF;}
+#tabs .ui-tabs-active a {color:#FFF; background:#0098E4;}
+#trainingDataTab {text-align: left}
+#trainingDataTab>div{border:1px solid #ccc; margin: 10px 0; padding: 0 10px 10px}
+#trainingDataTab h1{font-size: 15px}
+.trainData { height: 300px; overflow: scroll; overflow-x:hidden; width: 1119px;}
+.trainData table{width: 100%}
+.trainData td{text-align: left}
+.ffbmot{width: 100%}
+.ffbmot span{font: 14px Tahoma;}
+.trainGoal h1{display: inline-block; margin-right: 20px}
+.trainHeader{margin: 10px 0; font-size: 15px; font-weight: bold; display: inline-block;}
+#personalInfoTabs{text-align: left;padding: 10px;}
+.infoLine{font: 15px Tahoma;margin: 5px 0;}
+
+
+/* Style of the overlay & loading animation */
+
+.overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:#FFF;
+	opacity:0.3;
+	z-index:1;	
+}
+
+.overlay img {
+	position:absolute;
+	top:35%;
+	left:50%;	
+	margin-left:-117px;		
+}
+
+#userProgressBarContainer {
+	width:500px;
+	position:absolute;
+	top:35%;
+	left:50%;
+	opacity:1;
+	margin-left:-250px;
+	z-index:2;
+}
+
+
+/* Menu style */
+
+.menu {
+	width:980px;
+	height:60px;
+	margin:0px auto;
+	line-height:60px;
+	background: #0098E4;
+}
+
+.menu a {
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	color:#FFF;
+	border-left:1px solid #FFF;	
+	padding:0px 50px;
+	text-decoration:none;
+	font-size:16px;		
+	outline:none;
+}
+
+.menu a:hover {
+	color:#000;
+	cursor: pointer;	
+}
+
+.menu a:active {
+	color:#000;	
+}
+
+.menu a:first-child {
+	border-left:none;
+}
+
+
+/* Search page styling */
+
+#searchContainer {
+	margin:0 auto;
+	width:980px;	
+}
+
+.filterDescription{
+    display: inline-block;
+	text-align:left;
+    width:200px;	
+}
+
+#queryPreview {
+	padding:10px;	
+	background:#FBFBFB;
+	font-family:Courier New;
+	border:1px solid #CCC;
+}
+
+#aggregationRadios {
+	margin-bottom:10px;
+}
+
+#filterContainer{
+    margin:10px;
+}
+
+#searchButton {
+	background:#F39814;
+	border:none;
+	border-radius:5px;
+	padding:3px 10px;
+	margin-top:10px;
+	float:right;
+}
+
+
+/* Statistics styling */
+
+#statisticsTable {
+	width:980px;
+	margin:20px auto;
+	border:none;
+	border-right: 1px solid #ccc;
+}
+
+#statisticsTable tr:hover{
+	background: #fff; 
+	color: #000;
+	cursor: default;
+}
+
+#timeSpecifier {
+	margin:10px;	
+}
+
+#specifyTimeTextfield {
+	width:50px;
+}
+
+#timSpecifiedNanErrorMessage {
+	margin:10px;
+	color: red;
+}
+
+.statisticsView .infoLine{width: 960px; padding: 0 10px 5px; margin: 0 auto; border:1px solid #ccc; margin-top: 30px}
+.statisticsView .infoLine h3{display: inline-block;}
+.giftCardTable{width: 980px; margin: 20px auto; }
+.giftCardTable td { font-size: 14px arial, helvetica, sans-serif !important; }
+.giftCardTable tr:hover { background: #fff; color: #000; cursor: default;}
+#userWithMostTrainings:hover{color: #FFF;background:#F39814; cursor:pointer}
+
+/* Training Information Table Style */
+
+.trainData tr:hover, .trainData tr:hover td:first-child{
+	background: #fff !important;
+	color: #000 !important;
+	cursor: default !important;
+}
+.trainData tr td:hover, .trainData tr td:hover a{color: #FFF;background:#F39814;cursor:pointer; }
+
+/* Email Data Informations Table */
+#emailDataWrapper tr td, #emailDataWrapper tr td a{
+	background: #fff !important;
+	color: #000 !important;
+	cursor: default !important;
+}
+#emailDataWrapper{border-spacing:0;border-collapse:collapse; border:1px solid #ccc; padding: 0 10px 10px}
+#emailDataWrapper, .trainGoal span{text-align: left;font-size: 14px;}
+#emailDataWrapper h3{margin-bottom: 5px; font-size: 15px; display: inline-block}
+#emailTable tr:hover, #exerciseInfoTable tr:hover{ background: #fff; color: #000; cursor: default;}
+
+/* Payment Information Table */
+#paymentsTable tr td, #paymentsTable tr td:hover{
+	background: #fff !important;
+	color: #000 !important;
+	cursor: default !important;
+}
+
+/* Transactions Information Table */
+#transactionsWrapper h3, #transactionsWrapper .balance{text-align: left; font-size: 15px}
+#transactionsWrapper .balance{font-size: 15px; margin: 10px 0;}
+
+/* Personal Information Tabs */
+.infoLine{text-align: left}

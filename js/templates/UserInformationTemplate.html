@@ -1,0 +1,33 @@
+<div>
+
+<% personalInfo = user.get('personalInformation') %>
+<% firstName = personalInfo.firstName %>
+<% lastName = personalInfo.lastName %>
+<% email = personalInfo.emailAddress %>
+<% 
+	contactEmail = firstName+' '+lastName ;
+	if (firstName == '' && lastName == '') { contactEmail = contactEmail = email }
+%>
+<div id="username"><a href="mailto:<%=email%>">Send an email to <%=contactEmail%></a></div>
+	<div id="tabs">    
+	    <ul>
+	        <li><a href="#personalInfoTabs">Personal Info</a></li>
+	        <li><a href="#trainingDataTab">Training Data</a></li>
+	        <li><a href="#ContractDataTab">Contract Data</a></li>
+	        <li><a href="#EmailingTab">Emailing</a></li>
+	    </ul>
+	    
+	    <div id="personalInfoTabs">
+	        <%= personalInformationTemplate %>
+	    </div>
+	    <div id="trainingDataTab">
+	        <%= trainingDataTemplate %>
+	    </div>
+	    <div id="ContractDataTab">
+	        <%= contractDataTemplate %>
+	    </div>
+	    <div id="EmailingTab">
+	        <%= emailingTemplate %>
+	    </div>
+	</div>
+</div>

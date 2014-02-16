@@ -1,0 +1,40 @@
+<% 
+	var trainingData = user.get('trainingData');
+	if($.isEmptyObject(trainingData)) {
+%>
+	<span>User has no training data</span>
+<%	
+	} else {
+%>
+
+<div class="trainGoal">
+	<h1>Training Goal:</h1><span><%= trainingData.trainingGoal %></span>
+</div>
+<div>
+	<div class="trainHeader">Training Sessions</div>
+	<div class="trainData">
+		<table>
+		<% for(var i = 0; i < trainingData.trainingSessions.length; i++){ %> 
+			<% var session = trainingData.trainingSessions[i]; %>		
+		<tr>				
+			<td>Training session #<%= i+1 %>, at <%= trainingData.trainingSessions[i].creationDate %>. Duration: <%= trainingData.trainingSessions[i].durationInMinutes %> minutes.</td>
+			<td class="history"><a href="#">Creation History</a></td>
+			<td class="instructions"><a href="#">Instructions</a></td>
+			<td class="exercise"><a href="#">Exercises</a></td>
+		</tr>
+		<% } %>
+	</table>
+	</div>
+</div>
+<div class="ffbmot">
+	<h1>Ffbmot</h1>
+	<div>
+		<% for (var j in trainingData.questionnaire) { %>
+			<span><%= j %></span>:
+			<span><%= trainingData.questionnaire[j] %></span>
+			<br />
+		<% } %>
+	</div>
+</div>
+
+<% } %>
